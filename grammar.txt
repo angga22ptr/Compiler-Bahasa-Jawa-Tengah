@@ -1,0 +1,52 @@
+# grammar.txt
+
+```
+====================================================
+GRAMMAR
+Compiler Bahasa Jawa Tengah
+====================================================
+
+Keyword Bahasa Jawa Tengah
+
+cetak     = print
+nek       = if
+liyane    = else
+nalika    = while
+gawe      = function
+balekno   = return
+bener     = true
+salah     = false
+
+====================================================
+Grammar (BNF)
+====================================================
+
+Program
+    -> Pernyataan
+
+Pernyataan
+    -> Assignment
+    | Cetak
+    | Ekspresi
+
+Assignment
+    -> IDENTIFIER ASSIGN Ekspresi
+
+Cetak
+    -> CETAK LPAREN Ekspresi RPAREN
+
+Ekspresi
+    -> Suku
+    | Ekspresi PLUS Suku
+    | Ekspresi MINUS Suku
+
+Suku
+    -> Faktor
+    | Suku MULTIPLY Faktor
+    | Suku DIVIDE Faktor
+
+Faktor
+    -> NUMBER
+    | IDENTIFIER
+    | LPAREN Ekspresi RPAREN
+```
